@@ -14,7 +14,7 @@ function createCards($users, $authors, $quotes, $imgs) {
     for ($i = 1; $i <= count($quotes); $i++) { ?>
         <div class="slider-item align-content-center">
             <div class="animation-card_image">
-                <img src=<?= $imgs[random_int(0, 7)] ?>>
+                <img src=<?php $img_index = random_int(0, 7); echo $imgs[$img_index];?>>
             </div>
             <div class="animation-card_content">
                 <h3 class="animation-card_content_title title-2 fw-bold"><?= $users[$i]['name'] ?></h3>
@@ -29,15 +29,21 @@ function createCards($users, $authors, $quotes, $imgs) {
                         <cite title="Source Title"><?= $authors[$quotes[$i]['author_id']]['first_name'] . " " . $authors[$quotes[$i]['author_id']]['last_name'] ?></cite>
                     </figcaption>
                 </figure>
+                <a href="detail.php?index=<?= $i ?>">
+                    <div class="d-flex justify-content-end">
+                        <button class="btn btn-sm btn-success ms-1">Detail</button>
+                    </div>
+                </a>
             </div>
+            
         </div>
-    <?
+    <?php
     }
 }
 
-function findAuthor($authors, $author) {
+function findAuthor($authors, $author_firstname, $author_lastname) {
     for ($i = 1; $i <= count($authors); $i++) {
-        if ($authors[$i]['first_name'] . " " . $authors[$i]['last_name'] == $author) {
+        if ($authors[$i]['first_name'] == $author_firstname && $authors[$i]['last_name'] == $author_lastname) {
             return $i;
         }
     }

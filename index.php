@@ -44,7 +44,7 @@
         </div>
     </section>
 
-    <!-- Modal -->
+    <!-- Create Modal -->
     <div class="modal fade" id="modal" tabindex="-1" aria-labelledby="modal" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content p-3">
@@ -57,16 +57,21 @@
                         <div class="mb-3">
                             <label for="name" class="col-form-label">Display name:</label>
                             <input type="text" class="form-control" id="name" name="name"
-                                placeholder="Leave blank to remain anonymous">
+                                placeholder="Enter your name" required>
                         </div>
                         <div class="mb-3">
                             <label for="username" class="col-form-label">Username:</label>
                             <input type="text" class="form-control" id="username"
-                                name="username" placeholder="Leave blank to remain anonymous">
+                                name="username" placeholder="Enter your username" required>
                         </div>
                         <div class="mb-3">
-                            <label for="author" class="col-form-label">Author:</label>
-                            <input type="text" class="form-control" id="author" name="author" placeholder="Enter quote's author"
+                            <label for="author" class="col-form-label">Author's first name:</label>
+                            <input type="text" class="form-control" id="author_firstname" name="author_firstname" placeholder="Enter author's first name"
+                                required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="author" class="col-form-label">Author's last name:</label>
+                            <input type="text" class="form-control" id="author_lastname" name="author_lastname" placeholder="Enter author's last name"
                                 required>
                         </div>
                         <div class="mb-3">
@@ -83,7 +88,6 @@
             </div>
         </div>
     </div>
-
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous">

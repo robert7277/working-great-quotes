@@ -91,6 +91,27 @@ body {
     text-transform: uppercase;
     color: #696d74;
   }
+  .detail .animation-card_content {
+    font-family: "Open Sans", sans-serif;
+  }
+
+.detail .animation-card_content .animation-card_content_title {
+    color: #4a4545;
+    font-size: 1.5rem;
+    font-weight: 400;
+    letter-spacing: -0.18px;
+    line-height: 24px;
+    margin: 0;
+}
+
+.detail .animation-card_content .animation-card_content_description {
+    color: #696d74;
+    font-size: 15px;
+    font-weight: 300;
+    letter-spacing: normal;
+    line-height: 24px;
+    margin: 10px 0 0 0;
+}
 
 .title-section {
     margin-top: 550px;
