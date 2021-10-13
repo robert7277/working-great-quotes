@@ -7,7 +7,6 @@ $username = $users[$index]['username'];
 $quote = $quotes[$index]['quote'];
 $author_firstname = $authors[$quotes[$index]['author_id']]['first_name'];
 $author_lastname = $authors[$quotes[$index]['author_id']]['last_name'];
-
 $author = $author_firstname . " " . $author_lastname;
 
 ?>
@@ -90,8 +89,16 @@ $author = $author_firstname . " " . $author_lastname;
                             </figure>
                             
                             <div id="buttons">
-                                <a href="modify.php?index=<?= $index ?>"><button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#modal">Modify</button></a>
-                                <a href="delete.php?index=<?= $index ?>"><button type="button" class="btn btn-danger">Delete</button></a>
+                                <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#modal">Modify</button>
+                                <button onclick="myFunction()">Delete</button>
+                                <script>
+                                    function myFunction() {
+                                        let b = confirm('Clicking OK will delete the quote!');
+                                        if(b === true){
+                                            window.location.href = "delete.php?index=<?= $index ?>"
+                                        }
+                                    }
+                                </script>
                             </div>
                             
                         </div>
@@ -140,7 +147,7 @@ $author = $author_firstname . " " . $author_lastname;
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-primary">Edit</button>
+                       <a href="modify.php?index=<?=$index?>"><button type="submit" class="btn btn-primary">Edit</button></a>
                     </div>
                 </form>
             </div>
